@@ -23,7 +23,7 @@
       </group>
       <group targetFramework="Xamarin.Mac20">
       </group>
-      <group targetFramework="uap">
+      <group targetFramework="uap10.0">
 		<dependency id="Coding4Fun.Toolkit.Controls" version="2.1.8" />
 		<dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="6.0.5" />
       </group>
@@ -50,7 +50,9 @@
     <!--UWP-->
 	<file src="..\src\Acr.UserDialogs.Abstract\bin\Release\netstandard2.0\Acr.UserDialogs.Abstract.dll" target="lib\UAP10" />
     <file src="..\src\Acr.UserDialogs.UWP\bin\Release\Acr.UserDialogs.dll" target="lib\UAP10" />
-	<file src="..\src\Acr.UserDialogs.UWP\bin\Release\*.xbf" target="lib\UAP10" />
-	<file src="..\src\Acr.UserDialogs.UWP\bin\Release\*.xml" target="lib\UAP10" />
+	<file src="..\src\Acr.UserDialogs.UWP\bin\Release\Acr.UserDialogs.pri" target="lib\UAP10" />
+	<file src="..\src\Acr.UserDialogs.UWP\bin\Release\Acr.UserDialogs.xr.xml" target="lib\UAP10\Acr.UserDialogs" />
+	<file src="..\src\Acr.UserDialogs.UWP\bin\Release\*.xbf" target="lib\UAP10\Acr.UserDialogs" />
+
   </files>
 </package>
