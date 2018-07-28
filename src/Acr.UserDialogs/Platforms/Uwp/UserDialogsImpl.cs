@@ -51,43 +51,31 @@ namespace Acr.UserDialogs
 
         public override IDisposable ActionSheet(ActionSheetConfig config)
         {
-            var dlg = new ActionSheetContentDialog();
-
-            var vm = new ActionSheetViewModel
+            MenuFlyout menuFlyout = new MenuFlyout();
+            foreach( var option in config.Options )
             {
-                Title = config.Title,
-                Message = config.Message,
-                Cancel = new ActionSheetOptionViewModel(config.Cancel != null, config.Cancel?.Text, () =>
+                var item = new MenuFlyoutItem()
                 {
-                    dlg.Hide();
-                    config.Cancel?.Action?.Invoke();
-                }),
-
-                Destructive = new ActionSheetOptionViewModel(config.Destructive != null, config.Destructive?.Text, () =>
+                    Text = option.Text
+                };
+                item.Click += (sender, e) => option.Action.Invoke();
+                menuFlyout.Items.Add(item);
+            }
+            if ( config.Destructive != null )
+            {
+                menuFlyout.Items.Add(new MenuFlyoutSeparator());
+                var item = new MenuFlyoutItem()
                 {
-                    dlg.Hide();
-                    config.Destructive?.Action?.Invoke();
-                }),
+                    Text = config.Destructive.Text
+                };
+                item.Click += (sender, e) => config.Destructive.Action.Invoke();
+                menuFlyout.Items.Add(item);
+            }
 
-                Options = config
-                    .Options
-                    .Select(x => new ActionSheetOptionViewModel(true, x.Text, () =>
-                    {
-                        dlg.Hide();
-                        x.Action?.Invoke();
-                    }, x.ItemIcon ?? config.ItemIcon))
-                    .ToList()
-            };
-
-            dlg.DataContext = vm;
-            IAsyncOperation<ContentDialogResult> dialogTask = null;
-
-            return this.DispatchAndDispose(
-                config.UwpSubmitOnEnterKey,
-                config.UwpCancelOnEscKey,
-                () => dialogTask = dlg.ShowAsync(),
-                () => dialogTask?.Cancel()
-            );
+            var windowBounds = Window.Current.CoreWindow.Bounds;
+            var mousePosition = Window.Current.CoreWindow.PointerPosition;
+            menuFlyout.ShowAt(Window.Current.Content, new Point(mousePosition.X - windowBounds.X, mousePosition.Y - windowBounds.Y));
+            return new DisposableAction(() => menuFlyout.Hide());
         }
 
 
