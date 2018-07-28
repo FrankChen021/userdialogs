@@ -88,9 +88,9 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Acr.UserDialogs\Acr.UserDialogs.csproj">
-      <Project>{ad34aa53-f275-4f18-a51c-9809c4e1f3bc}</Project>
-      <Name>Acr.UserDialogs</Name>
+    <ProjectReference Include="..\Acr.UserDialogs.Abstract\Acr.UserDialogs.Abstract.csproj">
+      <Project>{fce57e86-4f71-41e2-9b96-e7d86fc694a9}</Project>
+      <Name>Acr.UserDialogs.Abstract</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

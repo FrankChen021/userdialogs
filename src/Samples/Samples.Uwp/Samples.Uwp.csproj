@@ -135,9 +135,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Acr.UserDialogs\Acr.UserDialogs.csproj">
-      <Project>{ad34aa53-f275-4f18-a51c-9809c4e1f3bc}</Project>
-      <Name>Acr.UserDialogs</Name>
+    <ProjectReference Include="..\..\Acr.UserDialogs.UWP\Acr.UserDialogs.UWP.csproj">
+      <Project>{8c77d09f-3485-4a80-892d-cf4f7cc31052}</Project>
+      <Name>Acr.UserDialogs.UWP</Name>
     </ProjectReference>
     <ProjectReference Include="..\Samples\Samples.csproj">
       <Project>{74cee6c1-4ce8-4279-82af-d5a5ddd76d18}</Project>

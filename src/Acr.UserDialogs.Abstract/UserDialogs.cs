@@ -5,7 +5,6 @@ namespace Acr.UserDialogs
 {
     public static partial class UserDialogs
     {
-        #if NETSTANDARD
         static IUserDialogs currentInstance;
         public static IUserDialogs Instance
         {
@@ -18,6 +17,5 @@ namespace Acr.UserDialogs
             }
             set => currentInstance = value;
         }
-        #endif
     }
 }
