@@ -35,6 +35,7 @@
     <Reference Include="BTProgressHUD, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\BTProgressHUD.1.2.0.6\lib\Xamarin.iOS10\BTProgressHUD.dll</HintPath>
     </Reference>
+    <Reference Include="OpenTK-1.0" />
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -44,14 +45,15 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
-    <None Include="UserDialogsImpl.cs" />
-    <None Include="UserDialogs.cs" />
-    <None Include="TTGSnackbar.cs" />
-    <None Include="Infrastructure\Utils.cs" />
-    <None Include="AIDatePickerController.cs" />
-    <None Include="Extensions.cs" />
-    <None Include="ProgressDialog.cs" />
+    <Compile Include="UserDialogsImpl.cs" />
+    <Compile Include="UserDialogs.cs" />
+    <Compile Include="TTGSnackbar.cs" />
+    <Compile Include="Infrastructure\Utils.cs" />
+    <Compile Include="AIDatePickerController.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="ProgressDialog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

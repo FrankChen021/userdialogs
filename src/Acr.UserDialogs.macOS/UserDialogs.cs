@@ -1,20 +1,18 @@
 ﻿using System;
-using UIKit;
+using System.Reflection;
 
+[assembly: AssemblyTitle("Acr.UserDialogs")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Acr.UserDialogs")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
 
 namespace Acr.UserDialogs
 {
     public class UserDialogs
     {
-        /// <summary>
-        /// OPTIONAL: Initialize iOS user dialogs with your top viewcontroll function
-        /// </summary>
-        public static void Init(Func<UIViewController> viewControllerFunc)
-        {
-            Instance = new UserDialogsImpl(viewControllerFunc);
-        }
-
-
         static IUserDialogs currentInstance;
         public static IUserDialogs Instance
         {

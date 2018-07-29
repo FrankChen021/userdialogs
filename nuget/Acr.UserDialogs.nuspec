@@ -15,7 +15,6 @@
     <tags>windows ios android xamarin macOS dialogs plugin</tags>
     <dependencies>
       <group targetFramework="netstandard2.0">
-        <dependency id="NETStandard.Library" version="1.6.1" />
       </group>
       <group targetFramework="MonoAndroid70">
 		<dependency id="AndHUD" version="1.2.0" />
@@ -24,14 +23,18 @@
 		<dependency id="AndHUD" version="1.2.0" />
       </group>
       <group targetFramework="Xamarin.iOS10">
+		<dependency id="BTProgressHUD" version="1.2.0.6" exclude="Build,Analyzers" />
       </group>
       <group targetFramework="Xamarin.Mac20">
       </group>
       <group targetFramework="uap10.0">
-		<dependency id="Coding4Fun.Toolkit.Controls" version="2.1.8" />
-		<dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="6.0.5" />
+        <dependency id="Coding4Fun.Toolkit.Controls" version="2.1.8" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="6.0.5" exclude="Build,Analyzers" />
       </group>
     </dependencies>
+	<frameworkAssemblies>
+      <frameworkAssembly assemblyName="OpenTK-1.0" targetFramework="Xamarin.iOS10" />
+    </frameworkAssemblies>
   </metadata>
 
   <files>
@@ -51,9 +54,9 @@
 	<file src="..\src\Acr.UserDialogs.Abstract\bin\Release\netstandard2.0\Acr.UserDialogs.Abstract.dll" target="lib\Xamarin.iOS10" />
     <file src="..\src\Acr.UserDialogs.iOS\bin\Release\Acr.UserDialogs.dll" target="lib\Xamarin.iOS10" />
 
-    <!--Xamarin.macOS 
+    <!--Xamarin.macOS -->
 	<file src="..\src\Acr.UserDialogs.Abstract\bin\Release\netstandard2.0\Acr.UserDialogs.Abstract.*" target="lib\Xamarin.Mac20" />
-    -->
+	<file src="..\src\Acr.UserDialogs.macOS\bin\Release\Acr.UserDialogs.dll" target="lib\Xamarin.Mac20" />
 	
     <!--UWP-->
 	<file src="..\src\Acr.UserDialogs.Abstract\bin\Release\netstandard2.0\Acr.UserDialogs.Abstract.dll" target="lib\UAP10" />
