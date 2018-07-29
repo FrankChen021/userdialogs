@@ -23,15 +23,20 @@ namespace Samples.macOS
 			};
 		}
 
+        public override NSWindow MainWindow => mainWindowController.Window;
 
-		public override NSWindow MainWindow => this.window;
+        public override void DidFinishLaunching(NSNotification notification)
+        {
+            mainWindowController = new MainWindowController();
+            mainWindowController.Window.MakeKeyAndOrderFront(this);
 
-		public override void DidFinishLaunching(NSNotification notification)
-		{
-			Forms.Init();
-			this.LoadApplication(new App());
+            Forms.Init();
+            this.LoadApplication(new App());
+        }
 
-			base.DidFinishLaunching(notification);
-		}
-	}
+        public override void WillTerminate(NSNotification notification)
+        {
+            // Insert code here to tear down your application
+        }
+    }
 }
