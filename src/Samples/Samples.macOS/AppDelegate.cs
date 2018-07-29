@@ -9,34 +9,27 @@ namespace Samples.macOS
 	[Register("AppDelegate")]
 	public class AppDelegate : FormsApplicationDelegate
 	{
-		readonly NSWindow window;
-
-
+		NSWindow _window;
 		public AppDelegate()
 		{
 			var style = NSWindowStyle.Closable | NSWindowStyle.Resizable | NSWindowStyle.Titled;
-			var rect = new CoreGraphics.CGRect(200, 1000, 1024, 768);
-			this.window = new NSWindow(rect, style, NSBackingStore.Buffered, false)
-			{
-				Title = "ACR User Dialogs",
-				TitleVisibility = NSWindowTitleVisibility.Hidden
-			};
+
+			var rect = new CoreGraphics.CGRect(200, 1000, 500, 768);
+			_window = new NSWindow(rect, style, NSBackingStore.Buffered, false);
+			_window.Title = "Xamarin.Forms Badge Plugin on Mac!";
+			_window.TitleVisibility = NSWindowTitleVisibility.Hidden;
 		}
 
-        public override NSWindow MainWindow => mainWindowController.Window;
+		public override NSWindow MainWindow
+		{
+			get { return _window; }
+		}
 
-        public override void DidFinishLaunching(NSNotification notification)
-        {
-            mainWindowController = new MainWindowController();
-            mainWindowController.Window.MakeKeyAndOrderFront(this);
-
-            Forms.Init();
-            this.LoadApplication(new App());
-        }
-
-        public override void WillTerminate(NSNotification notification)
-        {
-            // Insert code here to tear down your application
-        }
-    }
+		public override void DidFinishLaunching(NSNotification notification)
+		{
+			Forms.Init();
+			LoadApplication(new App());
+			base.DidFinishLaunching(notification);
+		}
+	}
 }
