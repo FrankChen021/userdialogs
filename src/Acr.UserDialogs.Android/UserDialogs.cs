@@ -5,7 +5,7 @@ using Android.App;
 
 namespace Acr.UserDialogs
 {
-    public static partial class UserDialogs
+    public class UserDialogs
     {
         public static void Init(Func<Activity> topActivityFactory)
         {

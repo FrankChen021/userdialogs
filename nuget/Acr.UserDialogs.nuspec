@@ -17,7 +17,11 @@
       <group targetFramework="netstandard2.0">
         <dependency id="NETStandard.Library" version="1.6.1" />
       </group>
-      <group targetFramework="MonoAndroid10">
+      <group targetFramework="MonoAndroid70">
+		<dependency id="AndHUD" version="1.2.0" />
+      </group>
+	  <group targetFramework="MonoAndroid80">
+		<dependency id="AndHUD" version="1.2.0" />
       </group>
       <group targetFramework="Xamarin.iOS10">
       </group>
@@ -35,9 +39,13 @@
     <file src="..\src\Acr.UserDialogs.Abstract\bin\Release\netstandard2.0\Acr.UserDialogs.Abstract.dll" target="lib\netstandard2.0" />
     <file src="..\src\Acr.UserDialogs\bin\Release\netstandard2.0\Acr.UserDialogs.dll" target="lib\netstandard2.0" />
     
-    <!--Xamarin.Android-->
+    <!--Xamarin.Android 70-->
+	<file src="..\src\Acr.UserDialogs.Abstract\bin\Release\netstandard2.0\Acr.UserDialogs.Abstract.dll" target="lib\MonoAndroid70" />
+    <file src="..\src\Acr.UserDialogs.Android\bin\Release\monoandroid70\Acr.UserDialogs.dll" target="lib\MonoAndroid70" />
+
+	<!--Xamarin.Android 80-->
 	<file src="..\src\Acr.UserDialogs.Abstract\bin\Release\netstandard2.0\Acr.UserDialogs.Abstract.dll" target="lib\MonoAndroid80" />
-    <file src="..\src\Acr.UserDialogs.Android\bin\Release\Acr.UserDialogs.dll" target="lib\MonoAndroid80" />
+    <file src="..\src\Acr.UserDialogs.Android\bin\Release\monoandroid80\Acr.UserDialogs.dll" target="lib\MonoAndroid80" />
     
     <!--Xamarin.iOS -->
 	<file src="..\src\Acr.UserDialogs.Abstract\bin\Release\netstandard2.0\Acr.UserDialogs.Abstract.dll" target="lib\Xamarin.iOS10" />
