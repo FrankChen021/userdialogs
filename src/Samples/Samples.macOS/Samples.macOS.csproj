@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6DF84C8C-CBA6-4BC1-9FB8-1600B189705A}</ProjectGuid>
-    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>Samples.macOS</RootNamespace>
     <AssemblyName>User Dialogs</AssemblyName>
@@ -116,6 +116,10 @@
     <ProjectReference Include="..\Samples\Samples.csproj">
       <Project>{74CEE6C1-4CE8-4279-82AF-D5A5DDD76D18}</Project>
       <Name>Samples</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Acr.UserDialogs.macOS\Acr.UserDialogs.macOS.csproj">
+      <Project>{DAC40954-1FD9-4435-9CE8-414E43987BF3}</Project>
+      <Name>Acr.UserDialogs.macOS</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
