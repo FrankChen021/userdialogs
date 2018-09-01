@@ -31,10 +31,10 @@ namespace Samples.ViewModels
                 //var actionColor = FromHex(this.ActionTextColor);
 
                 dialogs.Toast(new ToastConfig(this.Message)
-                    //.SetBackgroundColor(bgColor)
+                              .SetBackgroundColor(System.Drawing.Color.Red)
                     //.SetMessageTextColor(msgColor)
                     .SetDuration(TimeSpan.FromSeconds(this.SecondsDuration))
-                    .SetPosition(this.ShowOnTop ? ToastPosition.Top : ToastPosition.Bottom)
+                              .SetPosition(this.ShowOnTop ? ToastPosition.UnderTopNavigationBar : ToastPosition.Bottom)
                     //.SetIcon(icon)
                     .SetAction(x => x
                         .SetText(this.ActionText)
