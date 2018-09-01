@@ -162,7 +162,7 @@ namespace Acr.UserDialogs
                 txt.Text = args.Value;
         }
 
-
+        private nfloat navigationBarHeight = 0;
         IDisposable currentToast;
         public override IDisposable Toast(ToastConfig cfg)
         {
@@ -177,8 +177,20 @@ namespace Acr.UserDialogs
                     Message = cfg.Message,
                     Duration = cfg.Duration,
                     AnimationType = TTGSnackbarAnimationType.FadeInFadeOut,
-                    ShowOnTop = cfg.Position == ToastPosition.Top
+                    ShowOnTop = cfg.Position == ToastPosition.Top || cfg.Position == ToastPosition.UnderTopNavigationBar,
+                    CornerRadius = 0,
                 };
+
+                if ( cfg.Position == ToastPosition.UnderTopNavigationBar )
+                {
+                    if (navigationBarHeight == 0 )
+                    {
+                        using (var bar = new UINavigationController())
+                            navigationBarHeight = (int)bar.NavigationBar.Frame.Height;
+                    }
+                    snackbar.TopMargin = navigationBarHeight;
+                }
+
                 if (cfg.Icon != null)
                     snackbar.Icon = UIImage.FromBundle(cfg.Icon);
 
