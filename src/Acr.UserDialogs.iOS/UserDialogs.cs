@@ -2,9 +2,9 @@
 using UIKit;
 
 
-namespace Acr.UserDialogs.Platforms.ios
+namespace Acr.UserDialogs
 {
-    public static partial class UserDialogs
+    public class UserDialogs
     {
         /// <summary>
         /// OPTIONAL: Initialize iOS user dialogs with your top viewcontroll function

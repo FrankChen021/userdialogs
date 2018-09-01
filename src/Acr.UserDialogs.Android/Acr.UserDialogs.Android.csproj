@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>MonoAndroid70;MonoAndroid80</TargetFrameworks>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <DefineConstants>$(DefineConstants);__ANDROID__</DefineConstants>
+        <Product>Acr.UserDialogs - Android</Product>
+        <AssemblyName>Acr.UserDialogs</AssemblyName>
+        <RootNamespace>Acr.UserDialogs</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MSBuild.Sdk.Extras" Version="1.2.2" PrivateAssets="all" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'MonoAndroid70' ">
+        <PackageReference Include="AndHUD" Version="1.2.0" />
+        <PackageReference Include="Xamarin.Android.Support.Design" Version="25.4.0.2" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'MonoAndroid80' ">
+        <PackageReference Include="AndHUD" Version="1.2.0" />
+        <PackageReference Include="Xamarin.Android.Support.Design" Version="26.1.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Acr.UserDialogs.Abstract\Acr.UserDialogs.Abstract.csproj" />
+    </ItemGroup>
+
+    <Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
+</Project>

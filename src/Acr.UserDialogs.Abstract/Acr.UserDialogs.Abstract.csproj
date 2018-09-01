@@ -5,8 +5,4 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Acr.UserDialogs.Abstract\Acr.UserDialogs.Abstract.csproj" />
-  </ItemGroup>
-
 </Project>

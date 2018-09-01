@@ -6,7 +6,7 @@ using Windows.ApplicationModel.Core;
 
 namespace Acr.UserDialogs
 {
-    public static partial class UserDialogs
+    public static class UserDialogs
     {
         /// <summary>
         /// Initialize UWP user dialogs

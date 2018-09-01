@@ -29,8 +29,8 @@ namespace Acr.UserDialogs
             foreach (var opt in config.Options)
             {
                 var btn = alert.AddButton(opt.Text);
-                if (opt.ItemIcon != null)
-                    btn.Image = opt.ItemIcon.ToNative();
+                //if (opt.ItemIcon != null)
+                //    btn.Image = opt.ItemIcon.ToNative();
             }
             var actionIndex = alert.RunSheetModal(null); // TODO: get top NSWindow
             config.Options[(int)actionIndex].Action?.Invoke();

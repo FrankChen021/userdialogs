@@ -1,11 +1,18 @@
 ﻿using System;
+using System.Reflection;
 
+[assembly: AssemblyTitle("Acr.UserDialogs")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Acr.UserDialogs")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
 
 namespace Acr.UserDialogs
 {
-    public static partial class UserDialogs
+    public class UserDialogs
     {
-        #if NETSTANDARD
         static IUserDialogs currentInstance;
         public static IUserDialogs Instance
         {
@@ -18,6 +25,5 @@ namespace Acr.UserDialogs
             }
             set => currentInstance = value;
         }
-        #endif
     }
 }
